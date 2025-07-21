@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Orders & Bookings – Cargo Dashboard</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" />
+    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+
+    <!-- CSS Files -->
+    <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.2.0" rel="stylesheet" />
+</head>
+
+<body class="g-sidenav-show bg-gray-100">
+
+    <!-- Sidebar -->
+    <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2 bg-white my-2"
+        id="sidenav-main">
+        <div class="sidenav-header">
+            <i class="fas fa-times p-3 cursor-pointer text-dark opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
+                id="iconSidenav"></i>
+            <a class="navbar-brand px-4 py-3 m-0" href="dashboard.html">
+                <img src="../assets/img/logo-ct-dark.png" class="navbar-brand-img" width="26" height="26"
+                    alt="main_logo" />
+                <span class="ms-1 text-sm text-dark">CARGO</span>
+            </a>
+        </div>
+        <hr class="horizontal dark mt-0 mb-2" />
+        <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="dashboard.html">
+                        <i class="material-symbols-rounded opacity-5">dashboard</i>
+                        <span class="nav-link-text ms-1">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="fleet-management.html">
+                        <i class="material-symbols-rounded opacity-5">directions_car</i>
+                        <span class="nav-link-text ms-1">Fleet Management</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active bg-gradient-dark text-white" href="orders.html">
+                        <i class="material-symbols-rounded opacity-5">receipt_long</i>
+                        <span class="nav-link-text ms-1">Orders & Bookings</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="routes.html">
+                        <i class="material-symbols-rounded opacity-5">route</i>
+                        <span class="nav-link-text ms-1">Routes & Drivers</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="financial.html">
+                        <i class="material-symbols-rounded opacity-5">account_balance</i>
+                        <span class="nav-link-text ms-1">Financial Management</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="analytics.html">
+                        <i class="material-symbols-rounded opacity-5">analytics</i>
+                        <span class="nav-link-text ms-1">Reports & Analytics</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="contacts.html">
+                        <i class="material-symbols-rounded opacity-5">people</i>
+                        <span class="nav-link-text ms-1">Customers & Contacts</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="settings.html">
+                        <i class="material-symbols-rounded opacity-5">settings</i>
+                        <span class="nav-link-text ms-1">System Settings</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="sign-in.html">
+                        <i class="material-symbols-rounded opacity-5">logout</i>
+                        <span class="nav-link-text ms-1">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <!-- End Sidebar -->
+
+    <!-- Main Content -->
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
+
+        <!-- Top Navbar -->
+        <nav class="navbar navbar-main navbar-expand-lg px-0 mx-3 shadow-none border-radius-xl" id="navbarBlur"
+            data-scroll="true">
+            <div class="container-fluid py-1 px-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-5">
+                        <li class="breadcrumb-item text-sm">
+                            <a class="opacity-5 text-dark" href="#">Pages</a>
+                        </li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">
+                            Orders & Bookings
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </nav>
+        <!-- End Top Navbar -->
+        <div class="container-fluid py-4">
+            <!-- Page Header -->
+            <div class="row ms-3 mb-4">
+                <div class="col">
+                    <h3 class="mb-0 h4 font-weight-bolder">Orders & Bookings</h3>
+                    <p class="mb-0 text-sm">
+                        Track active orders, customer bookings, and delivery status across the fleet.
+                    </p>
+                </div>
+            </div>
+            <!-- KPI Cards: Orders & Bookings -->
+            <div class="row">
+                <!-- Today's Orders -->
+                <div class="col-xl-3 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="card-header p-2 ps-3 d-flex justify-content-between align-items-center">
+                            <div>
+                                <p class="text-sm mb-0">Today's Orders</p>
+                                <h4 class="mb-0">45</h4>
+                            </div>
+                            <div
+                                class="icon icon-md icon-shape bg-gradient-dark shadow-dark border-radius-lg text-center">
+                                <i class="material-symbols-rounded opacity-10">shopping_cart</i>
+                            </div>
+                        </div>
+                        <hr class="dark horizontal my-0" />
+                        <div class="card-footer p-2 ps-3">
+                            <p class="mb-0 text-sm">
+                                <span class="text-success font-weight-bolder">+12%</span> vs yesterday
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Bookings -->
+                <div class="col-xl-3 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="card-header p-2 ps-3 d-flex justify-content-between align-items-center">
+                            <div>
+                                <p class="text-sm mb-0">Active Bookings</p>
+                                <h4 class="mb-0">32</h4>
+                            </div>
+                            <div
+                                class="icon icon-md icon-shape bg-gradient-primary shadow-primary border-radius-lg text-center">
+                                <i class="material-symbols-rounded opacity-10">assignment</i>
+                            </div>
+                        </div>
+                        <hr class="dark horizontal my-0" />
+                        <div class="card-footer p-2 ps-3">
+                            <p class="mb-0 text-sm">
+                                <span class="text-success font-weight-bolder">+5%</span> today
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Completed Orders -->
+                <div class="col-xl-3 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="card-header p-2 ps-3 d-flex justify-content-between align-items-center">
+                            <div>
+                                <p class="text-sm mb-0">Completed Orders</p>
+                                <h4 class="mb-0">18</h4>
+                            </div>
+                            <div
+                                class="icon icon-md icon-shape bg-gradient-success shadow-success border-radius-lg text-center">
+                                <i class="material-symbols-rounded opacity-10">done</i>
+                            </div>
+                        </div>
+                        <hr class="dark horizontal my-0" />
+                        <div class="card-footer p-2 ps-3">
+                            <p class="mb-0 text-sm">
+                                <span class="text-success font-weight-bolder">+2%</span> from yesterday
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Canceled Orders -->
+                <div class="col-xl-3 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="card-header p-2 ps-3 d-flex justify-content-between align-items-center">
+                            <div>
+                                <p class="text-sm mb-0">Canceled Orders</p>
+                                <h4 class="mb-0">7</h4>
+                            </div>
+                            <div
+                                class="icon icon-md icon-shape bg-gradient-danger shadow-danger border-radius-lg text-center">
+                                <i class="material-symbols-rounded opacity-10">cancel</i>
+                            </div>
+                        </div>
+                        <hr class="dark horizontal my-0" />
+                        <div class="card-footer p-2 ps-3">
+                            <p class="mb-0 text-sm">
+                                <span class="text-danger font-weight-bolder">-1%</span> this week
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-lg-12">
+                    <div class="card shadow">
+                        <div class="card-header pb-0 px-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="mb-0">Recent Orders & Bookings</h6>
+                                <div class="d-flex">
+                                    <select class="form-select form-select-sm">
+                                        <option value="">All Statuses</option>
+                                        <option value="Delivered">Delivered</option>
+                                        <option value="Pending">Pending</option>
+                                        <option value="In Transit">In Transit</option>
+                                        <option value="Canceled">Canceled</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body pt-2 px-0">
+                            <div class="table-responsive p-3">
+                                <table class="table align-items-center mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th
+                                                class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                                Order ID</th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">
+                                                Customer</th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">
+                                                Origin</th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">
+                                                Destination</th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                                Date</th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                                Status</th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                                Amount</th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                                Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>#ORD-1001</td>
+                                            <td>Romina Hadid</td>
+                                            <td>Toronto</td>
+                                            <td>Montreal</td>
+                                            <td class="text-center text-sm">21 Mar 10:45 AM</td>
+                                            <td class="text-center"><span
+                                                    class="badge badge-sm bg-gradient-success">Delivered</span></td>
+                                            <td class="text-center text-sm">$2,300</td>
+                                            <td class="text-center">
+                                                <button class="btn btn-sm btn-outline-primary me-1"><i
+                                                        class="material-symbols-rounded">visibility</i></button>
+                                                <button class="btn btn-sm btn-outline-warning me-1"><i
+                                                        class="material-symbols-rounded">edit</i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i
+                                                        class="material-symbols-rounded">delete</i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#ORD-1002</td>
+                                            <td>Jessica Doe</td>
+                                            <td>Vancouver</td>
+                                            <td>Calgary</td>
+                                            <td class="text-center text-sm">22 Mar 02:20 PM</td>
+                                            <td class="text-center"><span
+                                                    class="badge badge-sm bg-gradient-warning">Pending</span></td>
+                                            <td class="text-center text-sm">$1,800</td>
+                                            <td class="text-center">
+                                                <button class="btn btn-sm btn-outline-primary me-1"><i
+                                                        class="material-symbols-rounded">visibility</i></button>
+                                                <button class="btn btn-sm btn-outline-warning me-1"><i
+                                                        class="material-symbols-rounded">edit</i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i
+                                                        class="material-symbols-rounded">delete</i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#ORD-1003</td>
+                                            <td>John Smith</td>
+                                            <td>Ottawa</td>
+                                            <td>Quebec City</td>
+                                            <td class="text-center text-sm">22 Mar 05:15 PM</td>
+                                            <td class="text-center"><span
+                                                    class="badge badge-sm bg-gradient-info text-dark">In Transit</span>
+                                            </td>
+                                            <td class="text-center text-sm">$2,450</td>
+                                            <td class="text-center">
+                                                <button class="btn btn-sm btn-outline-primary me-1"><i
+                                                        class="material-symbols-rounded">visibility</i></button>
+                                                <button class="btn btn-sm btn-outline-warning me-1"><i
+                                                        class="material-symbols-rounded">edit</i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i
+                                                        class="material-symbols-rounded">delete</i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#ORD-1004</td>
+                                            <td>Emily Davis</td>
+                                            <td>Edmonton</td>
+                                            <td>Winnipeg</td>
+                                            <td class="text-center text-sm">23 Mar 08:30 AM</td>
+                                            <td class="text-center"><span
+                                                    class="badge badge-sm bg-gradient-danger">Canceled</span></td>
+                                            <td class="text-center text-sm">$950</td>
+                                            <td class="text-center">
+                                                <button class="btn btn-sm btn-outline-primary me-1"><i
+                                                        class="material-symbols-rounded">visibility</i></button>
+                                                <button class="btn btn-sm btn-outline-warning me-1"><i
+                                                        class="material-symbols-rounded">edit</i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i
+                                                        class="material-symbols-rounded">delete</i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#ORD-1005</td>
+                                            <td>Michael Brown</td>
+                                            <td>Halifax</td>
+                                            <td>St. John's</td>
+                                            <td class="text-center text-sm">23 Mar 11:00 AM</td>
+                                            <td class="text-center"><span
+                                                    class="badge badge-sm bg-gradient-success">Delivered</span></td>
+                                            <td class="text-center text-sm">$1,200</td>
+                                            <td class="text-center">
+                                                <button class="btn btn-sm btn-outline-primary me-1"><i
+                                                        class="material-symbols-rounded">visibility</i></button>
+                                                <button class="btn btn-sm btn-outline-warning me-1"><i
+                                                        class="material-symbols-rounded">edit</i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i
+                                                        class="material-symbols-rounded">delete</i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#ORD-1006</td>
+                                            <td>Sophia Lee</td>
+                                            <td>Regina</td>
+                                            <td>Saskatoon</td>
+                                            <td class="text-center text-sm">23 Mar 01:45 PM</td>
+                                            <td class="text-center"><span
+                                                    class="badge badge-sm bg-gradient-success">Completed</span></td>
+                                            <td class="text-center text-sm">$3,100</td>
+                                            <td class="text-center">
+                                                <button class="btn btn-sm btn-outline-primary me-1"><i
+                                                        class="material-symbols-rounded">visibility</i></button>
+                                                <button class="btn btn-sm btn-outline-warning me-1"><i
+                                                        class="material-symbols-rounded">edit</i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i
+                                                        class="material-symbols-rounded">delete</i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#ORD-1007</td>
+                                            <td>Daniel Wilson</td>
+                                            <td>Victoria</td>
+                                            <td>Vancouver</td>
+                                            <td class="text-center text-sm">24 Mar 09:20 AM</td>
+                                            <td class="text-center"><span
+                                                    class="badge badge-sm bg-gradient-warning">Pending</span></td>
+                                            <td class="text-center text-sm">$2,700</td>
+                                            <td class="text-center">
+                                                <button class="btn btn-sm btn-outline-primary me-1"><i
+                                                        class="material-symbols-rounded">visibility</i></button>
+                                                <button class="btn btn-sm btn-outline-warning me-1"><i
+                                                        class="material-symbols-rounded">edit</i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i
+                                                        class="material-symbols-rounded">delete</i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#ORD-1008</td>
+                                            <td>Olivia Martinez</td>
+                                            <td>Calgary</td>
+                                            <td>Edmonton</td>
+                                            <td class="text-center text-sm">24 Mar 12:15 PM</td>
+                                            <td class="text-center"><span
+                                                    class="badge badge-sm bg-gradient-info text-dark">In Transit</span>
+                                            </td>
+                                            <td class="text-center text-sm">$1,550</td>
+                                            <td class="text-center">
+                                                <button class="btn btn-sm btn-outline-primary me-1"><i
+                                                        class="material-symbols-rounded">visibility</i></button>
+                                                <button class="btn btn-sm btn-outline-warning me-1"><i
+                                                        class="material-symbols-rounded">edit</i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i
+                                                        class="material-symbols-rounded">delete</i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#ORD-1009</td>
+                                            <td>Liam Anderson</td>
+                                            <td>Mississauga</td>
+                                            <td>Brampton</td>
+                                            <td class="text-center text-sm">24 Mar 03:40 PM</td>
+                                            <td class="text-center"><span
+                                                    class="badge badge-sm bg-gradient-success">Completed</span></td>
+                                            <td class="text-center text-sm">$1,900</td>
+                                            <td class="text-center">
+                                                <button class="btn btn-sm btn-outline-primary me-1"><i
+                                                        class="material-symbols-rounded">visibility</i></button>
+                                                <button class="btn btn-sm btn-outline-warning me-1"><i
+                                                        class="material-symbols-rounded">edit</i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i
+                                                        class="material-symbols-rounded">delete</i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#ORD-1010</td>
+                                            <td>Ava Hall</td>
+                                            <td>Kitchener</td>
+                                            <td>London</td>
+                                            <td class="text-center text-sm">25 Mar 08:00 AM</td>
+                                            <td class="text-center"><span
+                                                    class="badge badge-sm bg-gradient-danger">Canceled</span></td>
+                                            <td class="text-center text-sm">$800</td>
+                                            <td class="text-center">
+                                                <button class="btn btn-sm btn-outline-primary me-1"><i
+                                                        class="material-symbols-rounded">visibility</i></button>
+                                                <button class="btn btn-sm btn-outline-warning me-1"><i
+                                                        class="material-symbols-rounded">edit</i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i
+                                                        class="material-symbols-rounded">delete</i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+            <footer class="footer py-4">
+                <div class="container-fluid">
+                    <div class="row align-items-center justify-content-lg-between">
+                        <div class="col-lg-6 mb-lg-0 mb-4">
+                            <div class="copyright text-center text-sm text-muted text-lg-start">
+                                ©
+                                <script>document.write(new Date().getFullYear());</script>
+                                , made with <i class="fa fa-truck"></i> by
+                                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative
+                                    Tim</a>.
+                                Developed by Walid Khalafi.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- End Footer -->
+        </div>
+    </main>
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
+    <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+    <!-- Github buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="../assets/js/material-dashboard.min.js?v=3.2.0"></script>
+</body>
+
+</html>
